@@ -67,7 +67,7 @@
 	  
 	  
 	  
-	 <security:http auto-config="true">
+	 <security:http>
      
       <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
       <security:intercept-url pattern="/customer/**" access="ROLE_USER"/>
@@ -81,8 +81,8 @@
       <security:authentication-provider>
       <security:jdbc-user-service
        data-source-ref="dataSource"
-      authorities-by-username-query="SELECT username,role FROM authorities where username=?"
-      users-by-username-query="SELECT username,password,enabled FROM user where username=?"
+      authorities-by-username-query="SELECT username,role FROM Admin where username=?"
+      users-by-username-query="SELECT username,password,enabled FROM User where username=?"
       />
       </security:authentication-provider>
       

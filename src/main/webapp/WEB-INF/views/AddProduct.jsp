@@ -3,7 +3,7 @@
 	<div class="container">
 <div class="row">
 <div class="form-horizontal">
-<form:form action="/admin/product/addProduct" commandName="product" >
+<form:form action="/mycart/admin/addProduct" commandName="product" enctype="multipart/form-data" >
 	<%-- <div class="form-group">
 		<label class="col-md-4 control-label" for="ProductId">Product Id</label>
 						<div class="col-md-6">
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 
-			 <!--  <div class="form-group">
+			  <div class="form-group">
 					<input type="file" name="image">
 					</div> 
 
@@ -47,11 +47,11 @@
 						Select Category
 							<c:forEach items="${categories}" var="c">
 							
-							<form:radiobutton path="category.id" value="${c.id}"/>${c.categoryName}
+							<form:radiobutton path="category.id" value="${category.id}"/>${category.categoryName}
 							
 							</c:forEach> 
 						</div>		
-					-->
+				
 					
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="singlebutton"></label>

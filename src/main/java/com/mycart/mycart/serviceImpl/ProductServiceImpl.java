@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mycart.mycart.Dao.ProductDao;
+import com.mycart.mycart.model.Category;
 import com.mycart.mycart.model.Product;
 import com.mycart.mycart.service.ProductService;
 
@@ -32,6 +33,7 @@ public class ProductServiceImpl implements ProductService {
 	public boolean deleteProduct(int productId) {
 		return false;
 	}
+	
 	
 	
 	

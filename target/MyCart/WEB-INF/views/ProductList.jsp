@@ -8,12 +8,13 @@
 				<tr>
 					
 					<th>ProductID</th>
-					<th>Description</th>
+					
 					<th>Product Name</th>
 				     <th>Image</th>
 					
 					<th>Price</th>
 					<th>Quantity</th>
+					<th>Description</th>
 					<!-- <th>Category</th> -->
 					<!-- <th>Supplier</th>
                     <th>Other Links </th> -->
@@ -24,7 +25,7 @@
 					<td>${product.productId}</td>
 					<td>${product.productDescription}</td>
 					<td>${product.productName}</td>
-			        <td><img src="<c:url value="/resources/images/4-laptops-dan-02.jpg" />" 
+			        <td><img src="<c:url value="/resources/images/${product.productId}.jpg" />" 
 			        alt="image" width=50px hspace="0"></td> 				
 					
 					<td>${product.productPrice}</td>
@@ -37,11 +38,11 @@
    
  <security:authorize access="hasRole('ROLE_ADMIN')">
 
-<c:url var="delete" value="/admin/product/deleteproduct/${product.productId }"></c:url>
+<c:url var="delete" value="MyCart/admin/product/deleteproduct/${product.productId }"></c:url>
 <a href="${delete }"><span class="glyphicon glyphicon-trash"></span></a>
 
 
-<c:url var="edit" value="/admin/updateProduct/${product.productId }"></c:url>
+<c:url var="edit" value="/MyCart/admin/updateProduct/${product.productId }"></c:url>
 <a href="${edit }"><span class="glyphicon glyphicon-pencil"></span></a>
 
 </security:authorize></td>

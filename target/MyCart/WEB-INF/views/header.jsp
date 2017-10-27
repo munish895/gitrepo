@@ -34,28 +34,25 @@
            <li><a href="ProductList">Show Product</a></li> 
           </ul>
         </li>
-         <c:url value="/mycart/admin/product/addProduc" var="url"/>                    
+         <c:url value="/mycart/admin/addProduct" var="url"/>                    
                      <c:if test="${pageContext.request.userPrincipal.name!=null }">
 			<security:authorize access="hasRole('ROLE_ADMIN')">
 					<a href="${url}">ADD PRODUCT</a>
 					</security:authorize>
 					</c:if>
 					</li>
-					
-					 <li><a href="<c:url value="/getAllProduct" />">Add	Product
-					</a><li>
-					
-					
-					<li>
+		 <%--           <li>
 					<c:if test="${pageContext.request.userPrincipal.name!=null }">
 			<security:authorize access="hasRole('ROLE_ADMIN')">
 					 <c:url value="/admin/getcategory" var="url"/>
 					<a href="${url}">ADD Category</a>
 					</security:authorize>
 					</c:if>
-					</li>
+					</li>--%>
         <li><a href="#">Feedback</a></li>
-        <li><a href="#">Add To Cart</a></li>
+         <li><security:authorize access="hasRole('ROLE_USER')">
+         <li><a href="<c:url value="/Cart/getCart"></c:url>"> Add To Cart</a></li>
+         </security:authorize></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">		
 				<li>
@@ -65,8 +62,8 @@
 			</li>
 			
 			<c:if test="${pageContext.request.userPrincipal.name==null }">
-			<c:url value="/all/registrationform" var="url5"></c:url>
-			<li><a href="${url5 }"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+			<c:url value="/RegistrationForm" var="url5"></c:url>
+			<li><a href="${url }"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
 			<c:url value="/Login" var="Login"></c:url>
 		    <li><a href="${Login }"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>	
 		    </c:if>

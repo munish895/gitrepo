@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mycart.mycart.Dao.ProductDao;
+import com.mycart.mycart.model.Category;
 import com.mycart.mycart.model.Product;
 
 @Repository
